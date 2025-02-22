@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBANK</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #ffffff;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a00e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 10px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li {
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            border: 2px solid #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .partner-btn {
+            background: #5E3BEE;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        /* Promo Bar */
+        .promo-bar {
+            text-align: center;
+            padding: 10px;
+            background-color: #1F3747;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #E9ECF8;
+            padding: 50px 80px;
+            border-radius: 20px;
+            margin: 20px;
+            margin-left: 100px;
+            margin-right: 100px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .hero-content h1 .highlight {
+            color: #F47820;
+        }
+
+        .hero-content h2 {
+            font-size: 28px;
+            font-weight: 500;
+            color: #5E3BEE;
+        }
+
+        .info {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            margin-right: 40px;
+            text-align: center;
+        }
+
+        .info-box .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #F47820;
+        }
+        .value{
+            line-height: 70px;
+        }
+
+        .apply-btn {
+            background: #F47820;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            max-width: 45%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .navbar {
+                padding: 15px 30px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                gap: 5px;
+                
+            }
+
+            .q{
+                text-decoration: none;
+            }
+            .hero {
+                padding: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image img {
+                width: 100%;
+            }
+
+            .info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-box {
+                margin-bottom: 15px;
+            }
+        }
+        .q{
+            text-decoration: none;
+        }
+        .ys{
+            font-size: 50px !important;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                <div class="logo">AMBAK<sup>&reg;</sup></div>
+            </div>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Products ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="home.html">Home Loan</a></li>
+                            <li><a href="loan.html">Car Loan</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Tools ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="emicalc.html">EMI Calculator</a></li>
+                            <li><a href="bcalc.html">Balance Transfer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Application Tracker</a></li>
+                </ul>
+            </nav>
+            <div class="button-container">
+                <a href="#" class="contact-btn q">Contact Us</a>
+                <a href="#" class="partner-btn q">Become A Partner →</a>
+            </div>
+        </div>
+        <div class="promo-bar">
+            *Sign up as an Ambank customer today and get up to ₹25,000 off on login and processing fees! →
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="ys">Asaan <span class="highlight">Home Finance</span></h1><br>
+            <h2 class="ys">ab aapke sofe se!</h2>
+            <div class="info">
+                <div class="info-box">
+                    <p>As High as</p>
+                    <p class="value ys">90%</p>
+                    <p>of Property Value</p>
+                </div>
+                <div class="info-box">
+                    <p>As Low as</p>
+                    <p class="value ys">8.10%</p>
+                    <p>Interest Rates</p>
+                </div>
+                <div class="info-box">
+                    <p>Indi'a Top</p>
+                    <p class="value ys">40+</p>
+                    <p>Financiers</p>
+                </div>
+            </div><br>
+            <button class="apply-btn">Apply Now →</button>
+        </div>
+        <div class="hero-image">
+            <img src="hp.svg" alt="Finance Illustration">
+        </div>
+    </section>
+
+</body>
+</html>

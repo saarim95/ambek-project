@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBANK</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #ffffff;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a00e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 10px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li {
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            border: 2px solid #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .partner-btn {
+            background: #5E3BEE;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        /* Promo Bar */
+        .promo-bar {
+            text-align: center;
+            padding: 10px;
+            background-color: #1F3747;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #E9ECF8;
+            padding: 50px 80px;
+            border-radius: 20px;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .hero-content h1 .highlight {
+            color: #F47820;
+        }
+
+        .hero-content h2 {
+            font-size: 28px;
+            font-weight: 500;
+            color: #5E3BEE;
+        }
+
+        .info {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            margin-right: 40px;
+            text-align: center;
+        }
+
+        .info-box .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #F47820;
+        }
+
+        .apply-btn {
+            background: #F47820;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            max-width: 45%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .navbar {
+                padding: 15px 30px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .hero {
+                padding: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image img {
+                width: 100%;
+            }
+
+            .info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-box {
+                margin-bottom: 15px;
+            }
+        }
+
+
+
+        .container {
+            max-width: 800px;
+            margin: 35px auto;
+            background: #e8ecfa;
+            padding: 30px;
+            border-radius: 10px;
+        }
+        h2 {
+            color: #333;
+            text-align: center;
+        }
+
+        .ha{
+            text-align: center;
+        }
+        .highlight {
+            color: #f47820;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .slider-container {
+            margin: 20px 0;
+        }
+        input[type="range"] {
+            width: 100%;
+        }
+        .result-container {
+            display: flex;
+            justify-content: space-around;
+            margin-top: 20px;
+        }
+        .result-box {
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            width: 45%;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            background: #5E3BEE;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .contact {
+            background: #ffffff;
+            color: #5a45c5;
+            border: 2px solid #5a45c5;
+        }
+
+        .apply {
+            background: #5a45c5;
+            color: white;
+        }
+
+        .buttons {
+            margin-top: 20px;
+            text-align: center;
+        }
+
+        .q{
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                <div class="logo">AMBAK<sup>&reg;</sup></div>
+            </div>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Products ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="home.html">Home Loan</a></li>
+                            <li><a href="loan.html">Car Loan</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Tools ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="emicalc.html">EMI Calculator</a></li>
+                            <li><a href="bcalc.html">Balance Transfer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Application Tracker</a></li>
+                </ul>
+            </nav>
+            <div class="button-container">
+                <a href="#" class="contact-btn q">Contact Us</a>
+                <a href="#" class="partner-btn q">Become A Partner →</a>
+            </div>
+        </div>
+        <div class="promo-bar">
+            *Sign up as an Ambank customer today and get up to ₹25,000 off on login and processing fees! →
+        </div>
+    </header>
+
+ 
+
+
+    <div class="container">
+        <h2>EMI Calculator</h2>
+        <p class="ha">Your EMI is going to be <span class="highlight" id="emiValue">₹3,97,914</span></p>
+        <div class="slider-container">
+            <label>Required Loan Amount</label>
+            <input type="range" id="loanAmount" min="100000" max="10000000" value="5000000" step="10000">
+            <p>₹<span id="loanAmountValue">5,000,000</span></p>
+        </div>
+        <div class="slider-container">
+            <label>Interest Rate (% P.A.)</label>
+            <input type="range" id="interestRate" min="5" max="15" value="8.4" step="0.1">
+            <p><span id="interestRateValue">8.4</span>%</p>
+        </div>
+        <div class="slider-container">
+            <label>Tenure (Years)</label>
+            <input type="range" id="tenure" min="1" max="30" value="20" step="1">
+            <p><span id="tenureValue">20</span> Years</p>
+        </div>
+        <div class="result-container">
+            <div class="result-box">
+                <p>Principal Amount</p>
+                <h3>₹<span id="principal">5,000,000</span></h3>
+            </div>
+            <div class="result-box">
+                <p>Interest Amount</p>
+                <h3>₹<span id="interest">0</span></h3>
+            </div>
+        </div>
+        <div class="result-container">
+            <div class="result-box">
+                <p>Total Amount Paid</p>
+                <h3>₹<span id="totalPaid">0</span></h3>
+            </div>
+        </div>
+        <div class="buttons">
+            <button class="apply">Apply Now →</button>
+            <button class="contact">Contact Us →</button>
+        </div>
+    </div>
+
+    <script>
+        function calculateEMI() {
+            let loanAmount = document.getElementById("loanAmount").value;
+            let interestRate = document.getElementById("interestRate").value;
+            let tenure = document.getElementById("tenure").value;
+            
+            let monthlyRate = (interestRate / 100) / 12;
+            let numPayments = tenure * 12;
+            let emi = (loanAmount * monthlyRate * Math.pow(1 + monthlyRate, numPayments)) / (Math.pow(1 + monthlyRate, numPayments) - 1);
+            
+            let totalPaid = emi * numPayments;
+            let interestPaid = totalPaid - loanAmount;
+            
+            document.getElementById("emiValue").innerText = `${Math.round(emi).toLocaleString()}`;
+            document.getElementById("principal").innerText = `${parseInt(loanAmount).toLocaleString()}`;
+            document.getElementById("interest").innerText = `${Math.round(interestPaid).toLocaleString()}`;
+            document.getElementById("totalPaid").innerText = `${Math.round(totalPaid).toLocaleString()}`;
+        }
+
+        document.querySelectorAll("input[type='range']").forEach(input => {
+            input.addEventListener("input", function() {
+                document.getElementById(this.id + "Value").innerText = this.value;
+                calculateEMI();
+            });
+        });
+        calculateEMI();
+    </script>
+
+</body>
+</html>

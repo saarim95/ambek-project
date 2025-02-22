@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AMBANK</title>
+    <style>
+        /* General Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #ffffff;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a00e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 10px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li {
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            border: 2px solid #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .partner-btn {
+            background: #5E3BEE;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        /* Promo Bar */
+        .promo-bar {
+            text-align: center;
+            padding: 10px;
+            background-color: #1F3747;
+            color: #fff;
+            font-size: 14px;
+        }
+        .q{
+            text-decoration: none;
+        }
+
+        
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 100px;
+            padding-top: 40px;
+        }
+        .text-content h2 {
+            color: #4a00e0;
+            font-size: 24px;
+        }
+        .text-content h1 {
+            font-size: 36px;
+        }
+        .highlight {
+            color: #f97316;
+        }
+        .highlight-blue {
+            color: #4a00e0;
+        }
+        .cta-btn {
+            background: #f97316;
+            color: white;
+            border-radius: 8px;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .image-content img {
+            max-width: 100%;
+            
+        }
+        img{
+            width: 580px;
+            height: 450px;
+        }
+
+
+
+        .homel{
+            font-size: 40px !important;
+        }
+
+
+       
+       
+
+     
+        
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                <div class="logo">AMBAK<sup>&reg;</sup></div>
+            </div>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Products ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="home.html">Home Loan</a></li>
+                            <li><a href="loan.html">Car Loan</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Tools ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="emicalc.html">EMI Calculator</a></li>
+                            <li><a href="bcalc.html">Balance Transfer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Application Tracker</a></li>
+                </ul>
+            </nav>
+            <div class="button-container">
+                <a href="#" class="contact-btn q">Contact Us</a>
+                <a href="#" class="partner-btn q">Become A Partner →</a>
+            </div>
+        </div>
+        <div class="promo-bar">
+            *Sign up as an Ambank customer today and get up to ₹25,000 off on login and processing fees! →
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="text-content">
+                <h2 class="homel">Home Loans Simplified by Ambak</h2><br>
+                <h1><span class="highlight homel">Easy, Fast,</span><span class="highlight-blue"> and Reliable</span></h1><br>
+                <p>Maximize your savings instantly with best home loan rates, expert advice, and a seamless digital experience.</p><br><br><br><br><br><br>
+                <button class="cta-btn">Get Started Now</button>
+            </div>
+            <div class="image-content">
+                <img src="home.jpg" alt="House Illustration">
+            </div>
+        </section>
+    </main>
+
+
+</body>
+</html>

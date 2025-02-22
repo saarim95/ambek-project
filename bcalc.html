@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Balance Transfer Calculator</title>
+    <style>
+
+
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 50px;
+            background-color: #ffffff;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            color: #4a00e0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        nav ul li {
+            position: relative;
+            margin: 10px 15px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #333;
+            font-size: 16px;
+            font-weight: 500;
+            display: block;
+        }
+
+        /* Dropdown */
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: #fff;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 5px;
+            overflow: hidden;
+        }
+
+        .dropdown-menu li {
+            padding: 10px 20px;
+            white-space: nowrap;
+        }
+
+        .dropdown-menu li a {
+            color: #333;
+            display: block;
+        }
+
+        .dropdown:hover .dropdown-menu {
+            display: block;
+        }
+
+        /* Buttons */
+        .button-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+
+        .contact-btn {
+            border: 2px solid #333;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        .partner-btn {
+            background: #5E3BEE;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            white-space: nowrap;
+        }
+
+        /* Promo Bar */
+        .promo-bar {
+            text-align: center;
+            padding: 10px;
+            background-color: #1F3747;
+            color: #fff;
+            font-size: 14px;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #E9ECF8;
+            padding: 50px 80px;
+            border-radius: 20px;
+            margin: 20px;
+            flex-wrap: wrap;
+        }
+
+        .hero-content {
+            max-width: 50%;
+        }
+
+        .hero-content h1 {
+            font-size: 36px;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .hero-content h1 .highlight {
+            color: #F47820;
+        }
+
+        .hero-content h2 {
+            font-size: 28px;
+            font-weight: 500;
+            color: #5E3BEE;
+        }
+
+        .info {
+            display: flex;
+            margin: 20px 0;
+        }
+
+        .info-box {
+            margin-right: 40px;
+            text-align: center;
+        }
+
+        .info-box .value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #F47820;
+        }
+
+        .apply-btn {
+            background: #F47820;
+            color: #fff;
+            border: none;
+            padding: 12px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 500;
+        }
+
+        .hero-image {
+            max-width: 45%;
+        }
+
+        .hero-image img {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .navbar {
+                padding: 15px 30px;
+            }
+
+            .button-container {
+                flex-direction: column;
+                gap: 5px;
+            }
+
+            .hero {
+                padding: 40px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+                text-align: center;
+            }
+
+            .hero-image {
+                max-width: 100%;
+                text-align: center;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .navbar {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding: 30px;
+            }
+
+            .hero-content {
+                max-width: 100%;
+            }
+
+            .hero-image img {
+                width: 100%;
+            }
+
+            .info {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .info-box {
+                margin-bottom: 15px;
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #eef1fc;
+            display: fex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .calculator {
+            background: #e8ecf9;
+            padding: 30px;
+            border-radius: 20px;
+            width: 800px;
+            margin-top: 20px;
+            margin-left: 24%;
+            
+            text-align: center;
+        }
+        h1 {
+            font-size: 24px;
+            color: #333;
+        }
+        .savings {
+            font-size: 18px;
+            color: #666;
+        }
+        .amount {
+            font-size: 24px;
+            font-weight: bold;
+            color: #ff5722;
+        }
+        .section {
+            text-align: left;
+            margin-top: 20px;
+        }
+        .slider-container {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-top: 10px;
+        }
+        input[type="range"] {
+            flex: 1;
+            margin: 0 10px;
+        }
+        .emi-display {
+            text-align: right;
+            font-size: 18px;
+            font-weight: bold;
+            color: #4432a8;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .apply {
+            background: #5a45c5;
+            color: white;
+        }
+        .contact {
+            background: #ffffff;
+            color: #5a45c5;
+            border: 2px solid #5a45c5;
+        }
+
+        body {
+            background-color: #ffffff;
+        }
+        .q{
+            text-decoration: none;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <div class="logo"> 
+                <div class="logo">AMBAK<sup>&reg;</sup></div>
+            </div>
+            <nav>
+                <ul>
+                    <li class="dropdown">
+                        <a href="#">Products ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="home.html">Home Loan</a></li>
+                            <li><a href="loan.html">Car Loan</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a href="#">Tools ▼</a>
+                        <ul class="dropdown-menu">
+                            <li><a href="emicalc.html">EMI Calculator</a></li>
+                            <li><a href="bcalc.html">Balance Transfer</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="#">Partners</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Blogs</a></li>
+                    <li><a href="#">Application Tracker</a></li>
+                </ul>
+            </nav>
+            <div class="button-container">
+                <a href="#" class="contact-btn q">Contact Us</a>
+                <a href="#" class="partner-btn q">Become A Partner →</a>
+            </div>
+        </div>
+        <div class="promo-bar">
+            *Sign up as an Ambank customer today and get up to ₹25,000 off on login and processing fees! →
+        </div>
+    </header>
+  
+
+
+    <div class="calculator">
+        <h1>Balance Transfer Calculator</h1>
+        <p class="savings">Find out the savings in EMI</p>
+        <p>Total Savings in Cash Outflow</p>
+        <p class="amount">₹<span id="totalSavings">0</span></p>
+        
+        <div class="section">
+            <h2>Existing Loan</h2>
+            <div class="slider-container">
+                <label>Outstanding Principal</label>
+                <input type="range" id="principal" min="100000" max="5000000" step="50000" value="500000">
+                <span id="principalValue">₹5,00,000</span>
+            </div>
+            <div class="slider-container">
+                <label>Interest Rate (% P.A.)</label>
+                <input type="range" id="interestRate" min="5" max="15" step="0.1" value="9.03">
+                <span id="interestValue">9.03%</span>
+            </div>
+            <div class="slider-container">
+                <label>Tenure (Years)</label>
+                <input type="range" id="tenure" min="1" max="30" step="1" value="20">
+                <span id="tenureValue">20 years</span>
+            </div>
+        </div>
+        <div class="emi-display">Existing EMI ₹<span id="existingEMI">6665</span></div>
+        
+        <div class="section">
+            <h2>Balance Transfer</h2>
+            <div class="slider-container">
+                <label>Tenure (Years)</label>
+                <input type="range" id="newTenure" min="1" max="30" step="1" value="22">
+                <span id="newTenureValue">22 years</span>
+            </div>
+            <div class="slider-container">
+                <label>Interest Rate (% P.A.)</label>
+                <input type="range" id="newInterestRate" min="5" max="15" step="0.1" value="12.5">
+                <span id="newInterestValue">12.5%</span>
+            </div>
+        </div>
+        <div class="emi-display">Proposed EMI ₹<span id="proposedEMI">6359</span></div>
+        <div class="emi-display">Savings in EMI ₹<span id="savingsEMI">306</span></div>
+        
+        <div class="buttons">
+            <button class="apply">Apply Now →</button>
+            <button class="contact">Contact Us →</button>
+        </div>
+    </div>
+    
+    <script>
+        function updateValues() {
+            let principal = document.getElementById('principal').value;
+            let interestRate = document.getElementById('interestRate').value;
+            let tenure = document.getElementById('tenure').value;
+            let newTenure = document.getElementById('newTenure').value;
+            let newInterestRate = document.getElementById('newInterestRate').value;
+
+            document.getElementById('principalValue').innerText = `₹${parseInt(principal).toLocaleString()}`;
+            document.getElementById('interestValue').innerText = `${interestRate}%`;
+            document.getElementById('tenureValue').innerText = `${tenure} years`;
+            document.getElementById('newTenureValue').innerText = `${newTenure} years`;
+            document.getElementById('newInterestValue').innerText = `${newInterestRate}%`;
+
+            let existingEMI = Math.round((principal * interestRate / 1200) / (1 - Math.pow(1 + interestRate / 1200, -tenure * 12)));
+            let proposedEMI = Math.round((principal * newInterestRate / 1200) / (1 - Math.pow(1 + newInterestRate / 1200, -newTenure * 12)));
+            
+            document.getElementById('existingEMI').innerText = existingEMI.toLocaleString();
+            document.getElementById('proposedEMI').innerText = proposedEMI.toLocaleString();
+            document.getElementById('savingsEMI').innerText = (existingEMI - proposedEMI).toLocaleString();
+            document.getElementById('totalSavings').innerText = ((existingEMI - proposedEMI) * tenure * 12).toLocaleString();
+        }
+
+        document.querySelectorAll('input[type="range"]').forEach(input => {
+            input.addEventListener('input', updateValues);
+        });
+        
+        updateValues();
+    </script>
+</body>
+</html>
